@@ -2,6 +2,7 @@ var express = require('express');
 var app = express();
 var multer = require('multer')
 var cors = require('cors');
+const path = require('path');
 
 app.use(cors())
 
