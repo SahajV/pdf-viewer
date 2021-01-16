@@ -14,6 +14,13 @@ var storage = multer.diskStorage({
   }
 })
 
+// -------- STATIC
+
+app.use(express.static(path.join(__dirname, '../build')))
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../build'))
+})
+
 var upload = multer({ storage: storage }).single('file')
 
 app.post('/upload',function(req, res) {
